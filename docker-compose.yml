@@ -1,0 +1,20 @@
+version: '14'
+services:
+  src_db:
+    image: postgres:15
+    container_name: src_db
+    environment:
+      - .env
+    volumes:
+      - /var/lib/postgresql/data
+    ports:
+      - "5436:5432"
+  tgt_db:
+    image: postgres:15
+    container_name: tgt_db
+    environment:
+      - .env
+    volumes:
+      - /var/lib/postgresql/data
+    ports: 
+    - "5433:5432"
